@@ -13,3 +13,4 @@ jobs:
           token: ${{ secrets.WRITE_ACCESS_TOKEN }}
           repository: ivan-monaco/nodebt
           event-type: nodebt-trigger
+          client-payload: '{"origin": "${{ github.repository }}"}'
