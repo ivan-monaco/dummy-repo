@@ -1,0 +1,15 @@
+name: Trigger Dispatch on Commit
+
+on:
+  push:
+
+jobs:
+  triggerDispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.WRITE_ACCESS_TOKEN }}
+          repository: ivan-monaco/dummy-repo
+          event-type: nodebt-trigger
